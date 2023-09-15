@@ -9,11 +9,11 @@ namespace ExceptionHandlingExercise
         static void Main(string[] args)
         {
             // -----------------------------------------------------------------------------
-            // First create an char[], it must contain 6 charList and 3 letters - name it arr
-            // Create a list called charList that will hold integers
+            // First create an char[], it must contain 6 intList and 3 letters - name it arr
+            // Create a list called intList that will hold integers
             // Create an string variable with an empty string initializer - name it str
             char[] charArray = new char[9] { '1', '2', '3', '4', '5', '6', 'a', 'b', 'c' };
-            List<int> charList = new List<int>();
+            List<int> intList = new List<int>();
             string str = "";
             int tmpInt = 0;
 
@@ -29,7 +29,7 @@ namespace ExceptionHandlingExercise
                     //str = character.ToString();
                     //Console.WriteLine($"Char: {character}");
                     int parsedNumber = int.Parse(character.ToString());
-                    charList.Add(parsedNumber);
+                    intList.Add(parsedNumber);
                 }//end try
                 catch (Exception ex)
                 {
@@ -40,11 +40,13 @@ namespace ExceptionHandlingExercise
 
             }//foreach
 
-            foreach (var alphaNumericChr in charList)
-            {
-                Console.WriteLine($"2nd FOREACH in FIRST TRY/CATCH Nbrs: {alphaNumericChr}");
+            //foreach (var alphaNumericChr in intList)
+            //{
+            //    Console.WriteLine($"2nd FOREACH in FIRST TRY/CATCH Nbrs: {alphaNumericChr}");
 
-            }
+            //}
+
+
             //TODO [PART 2] START HERE:
             // Make a foreach loop to iterate through your character array
             
@@ -58,23 +60,23 @@ namespace ExceptionHandlingExercise
             // in the scope of your catch you can use the following, 
 
             //2nd part
-            foreach (var chrInArrary in charArray)
-            {
-            try
-                {
-                   str = chrInArrary.ToString();
-                   Console.WriteLine($"2nd TRY BLOCK str: {str}");
-                   tmpInt = int.Parse(str);
-                   charList.Add(tmpInt);
-                }
-            catch
-                {
-                    Console.WriteLine($"2nd CATCH POO Happened ");
-                }
-            }
+            //foreach (var chrInArrary in charArray)
+            //{
+            //try
+            //    {
+            //       str = chrInArrary.ToString();
+            //       Console.WriteLine($"2nd TRY BLOCK str: {str}");
+            //       tmpInt = int.Parse(str);
+            //       intList.Add(tmpInt);
+            //    }
+            //catch
+            //    {
+            //        Console.WriteLine($"2nd CATCH POO Happened ");
+            //    }
+            //}
             //Console.WriteLine($"Unable to Parse '{character}'"); //character will be the name of each item in your collection
 
-            foreach (var num in charList)
+            foreach (var num in intList)
             {
                 Console.WriteLine($"VERY LAST FOREACH Nbrs: {num}");
             }
